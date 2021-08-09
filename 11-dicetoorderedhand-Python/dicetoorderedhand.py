@@ -12,4 +12,14 @@
 
 def dicetoorderedhand(a, b, c):
 	# your code goes here
-	pass
+	li=[a,b,c]
+	count=0
+	li.sort()
+	for i,j in enumerate(li):
+			# print("i",i)
+			# print("j",j)
+			
+			count+=j*(10**i)
+			# print("count",count)
+	return count
+#dicetoorderedhand(1,2,3)	
