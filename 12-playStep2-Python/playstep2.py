@@ -32,7 +32,44 @@
 # Hint: Then, you may wish to use diceToOrderedHand(a, b, c) at the end to convert the 3 dice back
 # into a sorted hand.
 # Hint: Also, remember to use % to get the one's digit, and use //= to get rid of the one's digit.
+def rep(lis):
+	for i in range(2):
+		if(lis[i]==lis[i+1]):
+				return True
+	return False
+def order(li):
+		# your code goes here
+	
+	count=0
+	li.sort()
+	for i,j in enumerate(li):
+			# print("i",i)
+			# print("j",j)
+			
+			count+=j*(10**i)
+			# print("count",count)
+	return count
 
 def playstep2(hand, dice):
-	# your code goes here
-	pass
+	handl=[]
+	while(hand):
+		handl.append(hand%10)
+		hand=hand//10
+	handl=handl[::-1]
+	if(rep(handl)):
+		for i in range(2):
+			if(handl[i]!=handl[i+1]):
+					handl[i]=dice%10
+					dice=dice//10
+		return (order(handl),dice)
+	else:
+		m=[max(handl)]
+		for i in range(2):
+			m.append(dice%10)
+			dice=dice//10
+		return (order(m),dice)
+			
+					
+		
+			
+
