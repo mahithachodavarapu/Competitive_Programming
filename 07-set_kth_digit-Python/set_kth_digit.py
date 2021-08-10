@@ -7,18 +7,24 @@
 
 
 def fun_set_kth_digit(n, k, d):
-		li=[]
-		while(abs(n)):
-			li.append(n%10)
-			n=n//10
-		if(k>len(li)):li.insert(k,d)
-		else:
-			li[k]=d
-		c=1
-		num=0
-		for i in li:
-			num+=i*c
-			c=c*10
-		return num  			
-			
+    li=[]
+    sign=1
+    if n<0:sign=-1
+    n=abs(n)
+    while(n):
+        li.append(n%10)
+        n=n//10
+ 
+    if(k<len(li)):
+        li[k]=d
+    else:
+        li.insert(k,d)
+        
+    #print(li)
+    c=1
+    num=0
+    for i in li:
+        num+=i*c
+        c=c*10
+    return num*sign
 #print(fun_set_kth_digit(468, 3, 1))
