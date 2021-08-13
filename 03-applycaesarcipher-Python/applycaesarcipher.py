@@ -10,9 +10,17 @@
 # assert(applyCaesarCipher("zodiac", -2) == "xmbgya")
 
 
-def fun_applycaesarcipher(msg, shift):
-	return ""
+def cipher(i,shift):
+    k=26 if shift<=0 else 0
+    a=97 if i.islower() else 65
+    p=(ord(i)+shift-a+k)%26
+    return chr(a+p)
 
+def fun_applycaesarcipher(msg, shift):
+	out=""
+	for i in msg:
+		out = out+(cipher(i,shift) if i.isalpha() else i)
+	return out
 
 
 
