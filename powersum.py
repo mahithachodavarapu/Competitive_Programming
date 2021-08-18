@@ -29,7 +29,14 @@ def power(a, b):
 
 def powerSum(n, k):
     # Your code goes here...
-    return 0
+    if(n<=0 or k<=0):
+        return 0
+    sum=0
+    while(n):
+        sum+=n**k
+        n-=1
+
+    return sum
 
 # Write your own test cases here...
 assert(powerSum(2,10) == 1025)
