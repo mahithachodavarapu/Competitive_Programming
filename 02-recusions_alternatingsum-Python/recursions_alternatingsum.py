@@ -5,4 +5,9 @@
 
 
 def fun_recursions_alternatingsum(l): 
-	return 0
+	n=1
+	count=0
+	for i in l:
+		count+=i*n
+		n*=-1
+	return count
