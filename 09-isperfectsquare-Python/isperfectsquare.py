@@ -5,4 +5,16 @@
 
 def isperfectsquare(n):
 	# your code goes here
-	pass
+	
+	try:
+		n=int(n)
+	except:
+		return False
+	if(n<0):return False
+	s=int(n**(1/2))
+	if(n==s**2):
+    		return True
+	return False
+	
+
+	
