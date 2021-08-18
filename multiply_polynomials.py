@@ -8,7 +8,14 @@
 
 def multiplyPolynomials(p1, p2):
     # Your code goes here...
-    pass
+    l=[]
+    for i in p1:
+        for j in p2:
+            c=i*j
+            if(c!=0):
+                l.append(c)
+    # Your code goes here
+    return l
 
 # Write your own test cases
-print ("All test cases passwed...")
+print (multiplyPolynomials([2,0,3], [4,5]))
