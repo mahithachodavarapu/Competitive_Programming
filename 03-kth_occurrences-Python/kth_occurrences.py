@@ -5,6 +5,19 @@
 
 
 def fun_kth_occurrences(s, n):
-	return 'a'
+	d={}
+	l=[x for x in s]
+	for i in s:
+		d[i]=l.count(i)
+	#print(d)
+	for i in range(n-1):
+		m=max(d, key=d.get)
+		d.pop(m)
+		#print(d)
+	return max(d,key=d.get)
+	
+			
+print(fun_kth_occurrences("hsdibdouvbeiovbfeibvdsioubidsbvviefadbcildfab", 4))	
+#v		
 
 
