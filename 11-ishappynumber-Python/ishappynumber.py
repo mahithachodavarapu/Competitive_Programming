@@ -17,6 +17,22 @@
 # assert(ishappynumber(404) == True)
 # assert(ishappynumber(405) == False)
 
+ 
 def ishappynumber(n):
-	# your code goes here
-	pass
+	if(n<0):
+			return False
+	my_list = []
+	while True:
+		str_number = str(n)
+		r = 0
+		for i in str_number:
+			r += (int(i) * int(i))
+		if r == 1:
+			return True
+		elif r in my_list:
+			return False
+		my_list.append(r)
+		n = r
+		
+			
+	
